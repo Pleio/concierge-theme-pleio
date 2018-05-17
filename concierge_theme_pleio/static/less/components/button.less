@@ -14,9 +14,11 @@
     border-radius: @border-radius;
     transition: background-color @trans-fast, color @trans-fast, box-shadow @trans-fast;
     cursor: pointer;
+    white-space: nowrap;
     user-select: none;
     -webkit-appearance: none;
-         -moz-appearance: none;
+    -moz-appearance: none;
+    text-align: center;
 
     &:hover {
         background-color: @color-tertiary;
@@ -27,13 +29,26 @@
     }
 }
 
+.___flexbuttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: stretch;
+    margin-right: -10px !important;
+
+    .button {
+      flex: 1 1 0;
+      margin-right: 10px;
+    }
+}
+
 .button.___stretch {
     display: block;
     width: 100%;
     text-align: center;
 }
 
-.button.___icon {
+.button.___icon,
+.button.___fullspan {
     text-align: left;
 }
 
@@ -48,9 +63,11 @@
 
     &.___active {
         box-shadow: inset 0 0 0 1px @color-primary;
+        color: @color-primary;
 
         &:hover {
             background-color: @color-primary;
+            color: @color-white;
             box-shadow: none;
         }
     }
@@ -77,6 +94,10 @@
 .button.___clear {
     background-color: transparent;
     color: @color-primary;
+}
+
+.button.___error {
+    color: @color-red;
 }
 
 .button.___round {

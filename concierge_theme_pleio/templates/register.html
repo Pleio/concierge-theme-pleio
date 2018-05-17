@@ -1,8 +1,7 @@
-{% extends "base.html" %}
+{% extends "base_register.html" %}
 {% load i18n %}
 {% load include_asset %}
 {% load settings_value %}
-
 
 {% block content %}
 
@@ -13,7 +12,7 @@
     <div class="login__step-title">
         <div>
             <h2>{% trans "Register" %}</h2>
-            <p>{% trans "create a Pleio-account" %}</p>
+            <p>{% trans "create a " %}{% settings_value 'SITE_TITLE' %}{% trans " account" %}</p>
         </div>
         <img src="/static/images/logo-icon.svg" class="login__step-icon"/>
     </div>
@@ -62,12 +61,12 @@
             <div class="register__check">
                 {{ form.errors.accepted_terms }}
                 {{ form.accepted_terms }}
-                <label for="id_accepted_terms">{% trans "I agree with the "%}</label><a href="{% url 'terms_of_use' %}">{% trans " general terms"%}</a>
+                <label for="id_accepted_terms">{% trans "I agree with the general terms"%}
             </div>
             <div class="register__check">
                 {{ form.errors.receives_newsletter }}
                 {{ form.receives_newsletter }}
-                <label for="id_receives_newsletter">{% trans "Please subscribe me to the Pleio newsletter" %}</label>
+                <label for="id_receives_newsletter">{% trans "Please subscribe me to the " %}{% settings_value 'SITE_TITLE' %}{% trans " newsletter" %}</label>
             </div>
         </div>
 
