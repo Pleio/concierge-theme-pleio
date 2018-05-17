@@ -1,7 +1,7 @@
 {% load i18n %}
 {% load static %}
 {% load render_bundle from webpack_loader %}
-{% load Pleio_templatetags %}
+{% load include_asset %}
 {% load settings_value %}
 {% get_current_language as LANGUAGE_CODE %}
 {% settings_value 'SITE_FAVICON' as SITE_FAVICON %}
