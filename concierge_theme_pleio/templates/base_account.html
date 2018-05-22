@@ -88,10 +88,10 @@
                         </a>
                     </li>
                     <li>
-                        {% if request.path == '/legal-pages/terms/' %}
-                            <a href="{% url 'legal_pages' page_name='terms' %}" class="account-menu__list current">
+                        {% if request.path == '/pages/terms/' %}
+                            <a href="{% url 'pages' page_name='terms' %}" class="account-menu__list current">
                         {% else %}
-                            <a href="{% url 'legal_pages' page_name='terms' %}">
+                            <a href="{% url 'pages' page_name='terms' %}">
                         {% endif %}
                             <div>{% trans "General terms" %}</div>
                         </a>
