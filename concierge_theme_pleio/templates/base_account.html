@@ -100,8 +100,8 @@
             </div>
 
             <div class="account-right">
-                {% if request.COOKIES.partner_site_url %}
-                    <a href={{ request.COOKIES.partner_site_url }} class="button ___white ___outline account__close">{{ request.COOKIES.partner_site_name }}</a>
+                {% if request.COOKIES.origin_site_url %}
+                    <a href={{ request.COOKIES.origin_site_url }} class="button ___white ___outline account__close">{{ request.COOKIES.origin_site_name }}</a>
                 {% endif %}
 
                 <div class="account-right__content">
