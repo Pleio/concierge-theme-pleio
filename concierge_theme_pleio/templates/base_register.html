@@ -22,7 +22,7 @@
         <div class="account-overlay">
 
             {% if request.COOKIES.origin_site_url %}
-                <div class="account-theme" data-bg="{{ request.COOKIES.origin_site_logo_url }}">
+                <div class="account-theme" data-bg="/media/{{ request.COOKIES.origin_site_logo_url }}">
                     <a href={{ request.COOKIES.origin_site_url }} class="button ___white ___outline account__close">{{ request.COOKIES.origin_site_name }}</a>
                 </div>
             {% endif %}
