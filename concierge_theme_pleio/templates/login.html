@@ -99,6 +99,21 @@
           </div>
         </fieldset>
 
+        <fieldset class="loginview loginview__register">  
+            <div class="login__buttons --small-margin ___active">
+
+                <script type="text/javascript">
+                    function registerEmail () {
+                        var protocol = window.location.protocol
+                        var host = window.location.host
+                        var email = document.getElementById('id_username').value;
+                        window.location.href = protocol + "//" + host + "/register/" + email;
+                    }    
+                </script>
+                <a href="javascript:registerEmail();" class="button ___outline ___stretch ___active">{% trans "Register an account" %}</a>
+            </div>
+        </fieldset>
+
         <fieldset class="loginview loginview__login">
             <div class="input-field">
                 <label for="id_password">{% trans "Password" %}</label>

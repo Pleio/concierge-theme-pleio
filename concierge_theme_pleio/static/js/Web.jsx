@@ -66,7 +66,6 @@ $(document).ready(function() {
 
 var accounttype = (function(){
   var classname_active = '___active',
-    url_register = '/register/',
     url_accounttype = '/get_user_and_idp/';
   return {
     validate: function(){
@@ -91,9 +90,7 @@ var accounttype = (function(){
 
     process: function(r){
       if(!r || !r.user_exists && !r.idp){
-        localStorage.removeItem('user_idp');
-        window.location.href = url_register;
-        return false;
+        accounttype.show('register');
       }
 
       localStorage.setItem('user_idp',JSON.stringify(r));
@@ -123,6 +120,10 @@ var accounttype = (function(){
       } else {
         $('.loginview__email').addClass(classname_active);
       }
+      if(view == 'register'){
+        $('.loginview__register').addClass(classname_active);
+        $('.loginview__emailsubmit').addClass(classname_active);
+      }      
     }
   };
 })();
